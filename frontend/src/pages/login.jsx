@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./login.css";
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
+
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -25,6 +28,9 @@ const Login = () => {
       const res = await axios.post("http://localhost:5000/login", formData);
       setMessage(res.data.message);
       setFormData({ email: "", password: "" });
+
+      // ✅ Redirect to home page
+      navigate("/home");
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
     }
