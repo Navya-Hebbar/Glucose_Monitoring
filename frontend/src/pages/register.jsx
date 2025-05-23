@@ -64,6 +64,8 @@ const Register = () => {
           {error && <p className="error-text">{error}</p>}
           {message && <p className="success-text">{message}</p>}
           <button type="submit">Register</button>
+          <hr/>
+          <div>Already registered? <a href='/login'>LOGIN</a></div>
         </form>
       </div>
     </div>

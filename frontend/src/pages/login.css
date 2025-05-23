@@ -1,0 +1,131 @@
+.login-page {
+  height: 100vh;
+  background: #0d0d1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.animated-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+  filter: blur(40px);
+  animation: float 8s ease-in-out infinite alternate;
+}
+
+.circle1 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 10%;
+  background: #3f51b5;
+  animation-delay: 0s;
+}
+
+.circle2 {
+  width: 400px;
+  height: 400px;
+  bottom: 10%;
+  right: 10%;
+  background: #7986cb;
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-30px) translateX(30px);
+  }
+}
+
+.login-card {
+  position: relative;
+  background: #1f1f3a;
+  padding: 3rem 3.5rem;
+  border-radius: 15px;
+  box-shadow: 0 0 30px #4b6cb7;
+  width: 400px;
+  z-index: 10;
+  color: #eee;
+}
+
+.login-card h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 2.3rem;
+  color: #7986cb;
+  text-align: center;
+  text-shadow: 0 0 5px #7986cb;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 1.2rem;
+  border-radius: 10px;
+  border: none;
+  background: #2c2c54;
+  color: #fff;
+  font-size: 1.1rem;
+  box-shadow: inset 0 0 12px #1b243f;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card input::placeholder {
+  color: #aaa;
+}
+
+.login-card input:focus {
+  outline: none;
+  background: #3b3b73;
+  box-shadow: 0 0 12px #7986cb;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(45deg, #7986cb, #3f51b5);
+  border: none;
+  border-radius: 12px;
+  color: #eee;
+  font-weight: 700;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px #7986cb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 30px #3f51b5, 0 0 40px #7986cb;
+}
+
+.error-text {
+  color: #f44336;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  text-align: center;
+  text-shadow: 0 0 5px #f44336;
+}
+
+.success-text {
+  color: #4caf50;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  text-align: center;
+  text-shadow: 0 0 5px #4caf50;
+}
